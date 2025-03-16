@@ -56,24 +56,34 @@
         }
         /* Contenedor del formulario */
         .form-container {
-            background: white;
+            background: white; /* Color de fondo */
             padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Ancho máximo */
+            margin: 50px auto; /* Centra horizontalmente y da espacio arriba/abajo */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+            text-align: center; /* Asegura que el contenido interno también esté centrado */
+            border-radius: 10px; /* Bordes redondeados */
         }
         .form-container input, .form-container textarea {
-            width: 100%;
+            width: 90%; /* Reduce un poco el ancho para mejor diseño */
             padding: 10px;
-            margin: 10px 0;
+            margin: 10px auto; /* Centra cada campo individualmente */
+            display: block; /* Hace que cada campo ocupe toda la línea */
             border: 1px solid #ccc;
+            border-radius: 5px; /* Bordes redondeados */
         }
         .form-container button {
-            background: #333;
+            background: #333; /* Color oscuro */
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .form-container button:hover {
+            background: #555; /* Cambio de color al pasar el mouse */
         }
         /* Estilos para el logo de fondo con animación */
         .logo-bg {
@@ -118,7 +128,7 @@
     }
     </style>
     <link rel="icon" type="image/png" href="Just_logo-removebg-preview.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body>
@@ -130,9 +140,11 @@
             <a href="#contacto">Contacto</a>
         </div>
         <div class="social-icons">
+            <a href="https://wa.me/3016736119" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+
         </div>
         
     </nav>
@@ -202,5 +214,4 @@
     </script>
 </body>
 </html>
-
 
