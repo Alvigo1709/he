@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción de Eventos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            padding-top: 70px;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes">Quiénes Somos</a>
+            <a href="#clientes">Nuestros Clientes</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="inicio" class="section">
+            <h1>Bienvenidos a nuestra empresa de producción de eventos</h1>
+        </section>
+        <section id="quienes" class="section">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una empresa dedicada a la organización y producción de eventos inolvidables.</p>
+        </section>
+        <section id="clientes" class="section">
+            <h2>Nuestros Clientes</h2>
+            <p>Trabajamos con grandes marcas y clientes satisfechos.</p>
+        </section>
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>Puedes comunicarte con nosotros a través del siguiente formulario:</p>
+            <div class="form-container">
+                <form id="contactForm">
+                    <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                    <input type="email" id="email" placeholder="Tu Email" required>
+                    <textarea id="mensaje" placeholder="Tu Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+            const mensaje = document.getElementById("mensaje").value;
+            
+            const userData = {
+                nombre,
+                email,
+                mensaje
+            };
+            
+            localStorage.setItem("contactData", JSON.stringify(userData));
+            alert("Gracias por contactarnos. Nos comunicaremos contigo pronto.");
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+</body>
+</html>
