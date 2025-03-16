@@ -170,7 +170,7 @@
             <p>Dejanos tus datos y estaremos mas que felices de ponernos en contacto contigo para entender mejor tus necesidades</p>
             <div class="form-container">
                 <form id="contactForm">
-                    <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                    <input type="text" id="nombre" placeholder="Tu Nombre1" required>
                     <input type="email" id="email" placeholder="Tu Email" required>
                     <textarea id="mensaje" placeholder="Tu Mensaje" required></textarea>
                     <button type="submit">Enviar</button>
@@ -195,7 +195,7 @@
             });
         });
 
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
+             document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita que la página se recargue
 
     const formData = {
@@ -204,7 +204,7 @@
         mensaje: document.getElementById("mensaje").value
     };
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwJf0UpvVtoWsrQj8yRs4h0JfuuxU9fvoefFXzVUTmvXiJOVodiEQ6y6llKkdrGO16rxw/exec"; // Reemplaza con la nueva URL del script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzJYlbeTXoG4WXC7HiyCb7BQ3yjMJvKMm0lYR6gtLh0LbUoioA7XxcHnTjAM-ecbbuhuw/exec"; // Usa la URL actualizada
 
     fetch(scriptURL, {
         method: "POST",
