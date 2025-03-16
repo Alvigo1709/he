@@ -166,11 +166,12 @@
             <p>Trabajamos con grandes marcas y clientes satisfechos.</p>
         </section>
         <section id="contacto" class="section">
-            <h2>Contacto</h2>
-            <p>Puedes comunicarte con nosotros a través del siguiente formulario:</p>
+            <h2>¿Te contactamos?</h2>
+            <p>Dejanos tus datos y estaremos mas que felices de ponernos en contacto contigo para entender mejor tus necesidades</p>
             <div class="form-container">
                 <form id="contactForm">
                     <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                    <input type="text" id="cellphone" placeholder="Tu número de contacto" required>
                     <input type="email" id="email" placeholder="Tu Email" required>
                     <textarea id="mensaje" placeholder="Tu Mensaje" required></textarea>
                     <button type="submit">Enviar</button>
@@ -198,6 +199,7 @@
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault(); 
             const nombre = document.getElementById("nombre").value;
+            const cellphone = document.getElementById("cellphone").value;
             const email = document.getElementById("email").value;
             const mensaje = document.getElementById("mensaje").value;
             
