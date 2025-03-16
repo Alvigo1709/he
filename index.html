@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el sitio sea responsive en dispositivos móviles -->
     <title>Holding Events</title> <!-- Título de la página en el navegador -->
     <style>
+        #logo {
+            padding-top: 0px !important;
+            margin-top: -60px !important;
+            margin-bottom: -80px !important;
+        }
         /* Estilos generales del cuerpo */
         body {
             margin: 0;
@@ -38,7 +43,7 @@
         }
         /* Estilos generales de las secciones */
         .section {
-            padding: 50px;
+            padding: 60px;
             text-align: center;
             position: relative;
             opacity: 0; /* Inicialmente oculto para animación */
@@ -59,8 +64,8 @@
         }
         .form-container input, .form-container textarea {
             width: 100%;
-            padding: 10px auto;
-            margin: 10px auto;
+            padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
         }
         .form-container button {
@@ -72,14 +77,31 @@
         }
         /* Estilos para el logo de fondo con animación */
         .logo-bg {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.5);
-            opacity: 1!important;
-            width: 110px;
-            animation: fadeInZoom 1.5s ease-out forwards;
+            padding: 20px;
+            width: 200px; /* Ajusta el tamaño del logo */
+            display: block;
+           margin: 0 auto; /* Centrar la imagen */
+            animation: fadeIn 1.5s ease-in-out;
         }
+        .social-icons {
+        display: flex;
+        gap: 0px; /* Espacio entre iconos */
+         position: absolute;
+        right: 20px; /* Los coloca en la esquina derecha */
+        top: 50%;
+        transform: translateY(-50%);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #ccc; /* Cambia de color al pasar el mouse */
+        }
+
         @keyframes fadeInZoom {
             from {
                 opacity: 0;
@@ -90,8 +112,14 @@
                 transform: translate(-50%, -50%) scale(1);
             }
         }
+        h1 {
+        font-size: 40px; /* Ajusta el tamaño del texto */
+        font-weight: bold; /* Hace el texto más grueso */
+    }
     </style>
-<link rel="icon" type="image/png" href="Just_logo-removebg-preview.png">
+    <link rel="icon" type="image/png" href="Just_logo-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body>
     <nav class="navbar">
@@ -101,16 +129,25 @@
             <a href="#clientes">Nuestros Clientes</a>
             <a href="#contacto">Contacto</a>
         </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        
     </nav>
-    
+
+
     <div class="container">
         <section id="inicio" class="section">
+            <h1>Bienvenidos a Holding Events</h1>
+        </section>
+        <section id="logo" class="section">
             <img src="Logo6_HE-removebg-preview (1).png" alt="Logo" class="logo-bg"> 
-            <h1>Bienvenidos Holding Events</h1>
         </section>
         <section id="quienes" class="section">
             <h2>Quiénes Somos</h2>
-            <p>Somos una empresa dedicada a la organización y producción de eventos inolvidables, desde la logistica de tu evento hasta lo minimo necesario para que tus invtados tengan una experiencia inigualable.</p>
+            <p>Somos una empresa dedicada a la organización y producción de eventos inolvidables</p>
         </section>
         <section id="clientes" class="section">
             <h2>Nuestros Clientes</h2>
@@ -165,4 +202,5 @@
     </script>
 </body>
 </html>
+
 
