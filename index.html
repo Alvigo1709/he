@@ -170,7 +170,7 @@
             <p>Dejanos tus datos y estaremos mas que felices de ponernos en contacto contigo para entender mejor tus necesidades</p>
             <div class="form-container">
                 <form id="contactForm">
-                    <input type="text" id="nombre" placeholder="Tu Nombre2" required>
+                    <input type="text" id="nombre" placeholder="Tu Nombre3" required>
                     <input type="email" id="email" placeholder="Tu Email" required>
                     <textarea id="mensaje" placeholder="Tu Mensaje" required></textarea>
                     <button type="submit">Enviar</button>
@@ -195,33 +195,35 @@
             });
         });
 
-             document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que la página se recargue
+                  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que la página se recargue
 
-            const formData = {
-                nombre: document.getElementById("nombre").value,
-                email: document.getElementById("email").value,
-                mensaje: document.getElementById("mensaje").value
-            };
+    const formData = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        mensaje: document.getElementById("mensaje").value
+    };
+    console.log("Enviando datos:", formData);
 
-            const scriptURL = "https://script.google.com/macros/s/AKfycbzWvG3CrRo6TzrruU7kTfm4YKzW0H1ZRIaZRe8RxDf2EvQomtiUM_hsamQKCj-qPpAscQ/exec"; // Reemplázala con tu URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzJYlbeTXoG4WXC7HiyCb7BQ3yjMJvKMm0lYR6gtLh0LbUoioA7XxcHnTjAM-ecbbuhuw/exec"; // Usa la URL actualizada
 
-            fetch(scriptURL, {
-                method: "POST",
-                body: JSON.stringify(formData),
-                headers: { "Content-Type": "application/json" }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Respuesta del servidor:", data);
-                alert("Datos enviados correctamente a Google Sheets.");
-                document.getElementById("contactForm").reset();
-            })
-            .catch(error => {
-                console.error("Error al enviar datos:", error);
-                alert("Hubo un error al enviar los datos.");
-            });
-        });
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+        mode: "cors" // Asegurar que CORS está habilitado
+    })
+    .then(response => response.json()) // Convertir la respuesta a JSON
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+        alert("Datos enviados correctamente a Google Sheets.");
+        document.getElementById("contactForm").reset();
+    })
+    .catch(error => {
+        console.error("Error al enviar datos:", error);
+        alert("Hubo un error al enviar los datos.");
+    });
+});
     </script>
 </body>
 </html>
