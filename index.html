@@ -201,12 +201,13 @@
 
         const formData = {
             nombre: document.getElementById("nombre").value,
+            cellphone: document.getElementByID("cellphone").value,
             email: document.getElementById("email").value,
             mensaje: document.getElementById("mensaje").value
         };
 
         // Reemplaza con tu nueva URL del script de Google Apps
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwY72MLjnx-yweozLzbKz5nZPpf76_UGL8JGN7MSATimXf4rPWphHyRZeIkh-dRnli_Jw/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbwx4P8U8G78HPIqj25Snq49xcH2N5gwdfhkTIb9vxS0rvA-EzqH3BT0cjVnk_qFilqqPQ/exec";
 
         fetch(scriptURL, {
             method: "POST",
