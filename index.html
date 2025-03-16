@@ -197,34 +197,32 @@
         });
 
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita que la página se recargue
+    event.preventDefault(); // Evita que la página se recargue
 
-        const formData = {
-            nombre: document.getElementById("nombre").value,
-            cellphone: document.getElementByID("cellphone").value,
-            email: document.getElementById("email").value,
-            mensaje: document.getElementById("mensaje").value
-        };
+    const formData = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        mensaje: document.getElementById("mensaje").value
+    };
 
-        // Reemplaza con tu nueva URL del script de Google Apps
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwx4P8U8G78HPIqj25Snq49xcH2N5gwdfhkTIb9vxS0rvA-EzqH3BT0cjVnk_qFilqqPQ/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwJf0UpvVtoWsrQj8yRs4h0JfuuxU9fvoefFXzVUTmvXiJOVodiEQ6y6llKkdrGO16rxw/exec"; // Reemplaza con la nueva URL del script
 
-        fetch(scriptURL, {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: { "Content-Type": "application/json" }
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log("Respuesta del servidor:", data);
-            alert("Datos enviados correctamente a Google Sheets.");
-            document.getElementById("contactForm").reset();
-        })
-        .catch(error => {
-            console.error("Error al enviar datos:", error);
-            alert("Hubo un error al enviar los datos.");
-        });
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => response.json()) // Convertir la respuesta a JSON
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+        alert("Datos enviados correctamente a Google Sheets.");
+        document.getElementById("contactForm").reset();
+    })
+    .catch(error => {
+        console.error("Error al enviar datos:", error);
+        alert("Hubo un error al enviar los datos.");
     });
+});
     </script>
 </body>
 </html>
